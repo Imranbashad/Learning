@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            border:5px ridge black;
+            /* grid-template-columns: 200px 300px; */
+            /* column value take width and row values take height if both defined */
+            /* grid-template-rows:50px; */
+            /* grid-template-areas: "item1 item1 item3"
+                                    "item2 item2 item2"
+                                    "item4 item4 item4"; */
+                                    /*  we cannot give same item in different lines */
+
+
+
+                                    grid-auto-rows: 100px;
+                                    /* grid auto rows gives width to those items 
+                                    where width i ss not defined in gtr(grid templae rows) */
+
+
+         /* grid-auto-flow:column; */
+         
+             
+        }
+        .item{
+            border:5px ridge rgb(244, 0, 0);
+        }
+        .item1{
+            /* grid-area: item1; */
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .item2{
+            /* grid-area: item2; */
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+            grid-column-start: 3; 
+            /* item properties */
+        }
+        .item3{
+            /* grid-area: item3; */
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        .item4{
+            /* grid-area: item4; */
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    difference betwene flex and grid is 
+    grid have both row and columns at same time
+    
+    while flex works on either row or columns-->
+
+    <div class="container">
+        <div class="item item1">fdsafd</div>
+        <div class="item item2">gfg</div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        
+    </div>
+
+
+</body>
+</html>

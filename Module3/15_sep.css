@@ -1,0 +1,75 @@
+
+/* --------------------------------------------- */
+p{
+    color:red;
+}
+/* element selector */
+/* -------------------------------------------- */
+.class1{
+    border:1px solid red;
+    padding: 50px;
+    width: 100%;
+}
+/* to select a group of elements we use class selector */
+/* ------------------------------------------------------ */
+#unique{
+    background-color: aqua;
+}
+/* to select a unique elemetn we use id selector */
+/* ---------------------------------------------------------- */
+[type="text"]{
+    
+    border:1px solid red;
+    padding: 10px;
+    color: rgb(255, 51, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+/* attribute selector */
+/* -------------------------------------------------- */
+h1{
+    background-color: red;
+}
+div h1{
+    background-color: rgb(221, 255, 0);
+}
+/* 
+1. decendent selector. here it has more specificty so aqua is applied 
+2. if both have same specificity then which ever comes later that eill take effect
+   this is called cascade in css. 
+3. decendent selects all the elements inside it (including nested elements)*/
+/* ---------------------------------------------------- */
+div > h2{
+    background-color: rgb(103, 110, 103); 
+    /* background color is not inherited so it is not applied  */
+    color:rgb(29, 255, 183);
+    /* font-size: large; */
+    font-style: italic;
+   
+}
+/* 
+1. child selector 
+in child selector selects only immediate child element and not nested elements
+2. sometime child selectro can not inherit few properties.
+--------------------------------------------------------------------------------- */
+
+
+/* Psueodo Selectors */ /* Psueodo Selectors */ /* Psueodo Selectors */ /* Psueodo Selectors */
+button:hover{
+    width: 100px;
+}
+/*  hovre active and focus  */
+/* hover selector  */
+
+/* -------------------------------------------------------------------------- */
+
+li:nth-child(odd){
+    color:rgb(0, 0, 0);
+    background-color: rgb(236, 127, 127);
+}
+/* nth child 
+here we can use anything odd even or divsion rule or any rule we can specify*/
+/* ------------------------------------------------------------------------ */
+
+

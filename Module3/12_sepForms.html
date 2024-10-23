@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 1px solid black;
+            padding: 5px;
+            color: rgb(11, 105, 122);
+        }
+        label{
+            margin: 10px;
+            font-family: "arial";
+            font-size: larger;
+        }
+        input{
+            margin: 10px;
+            padding: 10px;
+        }
+        #Submit{
+            background-color: bisque;
+            border-radius: 5px;
+            width: 100px;
+            display: flex;
+            /* justify-content: center; */
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit" method="post"> <!-- action can have any url where data needs to be sent after submitting-->
+        <label for="name">Name</label>
+        <!-- name attribute is used as key value pair -->
+        <input type="text" id="name" name="name" required placeholder="first name"> 
+        <input type="text" id="lastname" placeholder="last name">
+        <br>
+        <label for="Email">Email</label>
+        <input type="email" id="Email" placeholder="Email" required>
+        <!-- for attribute and id in input and label should be same(linking) -->
+        <br>
+        <label for="birthdate">Date of birth</label>
+        <input type="date">
+        <br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" id="male" value="Male">
+        <!-- key value pair is value and gender only in this -->
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value = "Female">
+        <label for="female">Female</label>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" minlength="8" required>
+        <br>
+        <label for="remarks">Remarks</label>
+        <textarea name="remarks" id="remarks" rows="4"></textarea>
+        <br>
+        <!-- ------------------------------------------------------------------- -->
+        <label for="location">Select location</label>
+        <select name="location" id="location">  
+            <!-- select uses id not for (for is only for labels) -->
+            <option value="Pune">Pune</option>
+            <option value="">Hyderabad</option>
+            <option value="">Kochi</option>
+        </select>
+        <br>
+        <!-- ------------------------------------------------------------------- -->
+        <fieldset> 
+            <!-- fieldset create a border  -->
+            <legend>Example</legend>
+            <label for="gen">Gender</label>
+            <input type="radio" name="" id="">
+        </fieldset>
+
+
+
+         <!-- ------------------------------------------------------------------- -->
+        <label for="submit"></label>
+        <input type="submit" name="Submit" id="Submit">
+        <button type="submit" value="submit">Submit</button>
+         <!-- 
+      When to Use the value Attribute
+Form Submission: If you have multiple submit buttons in a form, 
+the value attribute 
+can help differentiate which button was clicked
+       -->
+    </form>
+</body>
+</html>

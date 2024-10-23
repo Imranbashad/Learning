@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container,
+      .child {
+        border: 1px solid black;
+      }
+      .container {
+        height: 50vh;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .child {
+        height: 50%;
+        /* height: 20vh;   */
+        box-sizing: border-box;
+      }
+
+      span {
+        background-color: red;
+        height: 10px;
+        width: 200px;
+        /* -------------- */
+        display: inline-block;
+        display: none;
+        /* ----------------- */
+      }
+
+      .hi {
+        position: sticky;
+        background-color: black;
+        top: 5vh;
+        left: 30px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child"></div>
+    </div>
+<!-- ---------------------------------------------------------------------------- -->
+    <!-- <span>hello</span>
+  <span>hello 2</span>   -->
+    <!--  we can make an element bloxk or inline by using display css property -->
+
+    <span>helloo there </span>
+    <!--  only when we use display inline block we can give height and width to inline elements
+    width and heigt doesnt apply on inline elements
+  -->
+<!-- ----------------------------------------------------------------------- -->
+    <div class="hi">Black background</div>
+    <!--  
+    relative stays at original position 
+    absolute stays with rspecet to parent container 
+    fixed stays in one place no and doesnt scrol
+    sticky fixes after certain point of scroll till then its relative 
+    -->
+  </body>
+</html>

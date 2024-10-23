@@ -1,0 +1,58 @@
+viewport means entire screen without scrolling .
+browser engines
+responsiveness of websites
+screen reader
+seo. 
+
+Sometime we send data from frontend to backend to store in dabase. sometime we retrieve data from from backend.
+// Learn more about semantic tags header, footer, section, 
+
+
+Questions ?
+-----------------
+How will the search bar give suggestions?
+website vs webapp?
+Can we create website without backend?
+can we use div for most of elements instead of p b h etc.,
+what is relative urls path? form action /submit and method post 
+child selector
+
+
+
+self read
+---------------
+<!-- difference between parent and top attributes in target -->
+name attributes(important for form elements)
+to differenciate between two buttons which one is pressed we use different values(attribute). Read more...
+metadata
+mroe about iframe
+port numbers?
+can th take two cells?
+what is relative urls path? form action /submit and method post 
+nth and nth of type
+font kerning?
+/* border-image: source slice width outset repeat  */
+Relative and Absolute units 
+object-fit:cover;
+
+align itmes self read more
+mre about gap
+
+ difference betwene flex and grid 
+
+
+
+
+
+
+
+
+notes
+
+Inline elements, such as <span> or <a>, are designed to flow within the text. This means they only take up as much width as their content requires and do not start on a new line. Because of this, setting explicit height and width properties on inline elements is generally ignored by browsers12.
+
+Here are a few key points:
+
+Content-Driven Dimensions: Inline elements’ dimensions are determined by their content. They expand and contract based on the text or other inline content they contain3.
+Flow with Text: Inline elements flow along with the surrounding text, which means they don’t disrupt the line structure of the text. This is why they don’t respect height and width properties4.
+Use Inline-Block for Control: If you need to control the dimensions of an element while keeping it inline, you can use display: inline-block;. This allows you to set height and width while still keeping the element in the flow of the text2.

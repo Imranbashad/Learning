@@ -1,0 +1,46 @@
+.div{
+    padding: 20px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+    /* border: 1px solid red; */ 
+    border-width :10px;
+    border-style: groove;
+    border-color: green;
+
+    border-top:20px dotted green;
+    border-radius: 20px;
+
+    /* border-image: source slice width outset repeat ;  Shorthand.
+
+    border-image-width:  property will reduce the container size if given more
+
+    */
+
+} 
+
+table,td,th{
+    margin: 30px;
+    border: 1px solid black;
+    /* border-collapse: collapse; */
+    border-spacing: 20px;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+
+.backImg{
+    
+    background-color: red;
+    background-image: url('https://th.bing.com/th/id/OIP.wwxK07x0Umfnh0l-nrjxjgHaDg?rs=1&pid=ImgDetMain');
+    background-repeat: repeat;
+    background-position: 10px 10px;
+    background-size: 100px; 
+    background-attachment: fixed;
+/* ------------------------------ */
+    padding:30px;
+    background-clip: content-box;
+    /* ---------------------------------- */
+    background-blend-mode: lighten;
+}

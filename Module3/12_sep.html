@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 1px;
+        /* width:100vw */
+      }
+      th{background-color: rgb(222, 222, 222);}
+      /* table gives border for over all and th and td give border for themselves */
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>age</th>
+          <th>Designation</th>
+          <th>salary</th>
+          <th>company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jane Smith</td>
+          <td>28</td>
+          <td>Data Analyst</td>
+          <td>$70,000</td>
+          <td>DataWorks</td>
+          <!-- td starts from left to right  -->
+        </tr>
+        <tr>
+          <td>Chris Wilson</td>
+          <td>40</td>
+          <td>CTO</td>
+          <td>$150,000</td>
+          <td>Innovatech</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Why Use <tr>?
+Semantic Structure: Using <tr> within <thead> ensures the table is semantically correct,
+making it easier for browsers, screen readers, and other tools to understand and process the table structure. -->
+    <br />
+    <table>
+      <thead>
+        <th >Name</th>
+        <!-- colspan takes space right side only -->
+        <th>age</th>
+        <th>Designation</th>
+        <th>salary</th>
+        <th>company</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">John Doe</td> 
+          <!-- row span takes space below only not above -->
+          <td>30</td>
+          <td>Software Engineer</td>
+          <td>$80,000</td>
+          <td>TechCorp</td>
+          <td>fincorp</td>
+          <!-- added one extra column in this row -->
+        </tr>
+        <tr>
+          <!-- <td>Chris Wilson</td> -->
+           <!-- left values will never be empty -->
+          <td>40</td>
+          <td>CTO</td>
+          <td>$150,000</td>
+          <td>Innovatech</td>
+          <td><table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>age</th>
+                <th>Designation</th>
+                <th>salary</th>
+                <th>company</th>
+              </tr>
+            </thead>
+            <tbody>
+      
+              <tr>
+                <td>Jane Smith</td>
+                <td>28</td>
+                <td>Data Analyst</td>
+                <td>$70,000</td>
+                <td>DataWorks</td>
+              </tr>
+              <tr>
+                <td>Chris Wilson</td>
+                <td>40</td>
+                <td>CTO</td>
+                <td>$150,000</td>
+                <td>Innovatech</td>
+              </tr>
+            </tbody>
+          </table></td>
+        </tr>
+        <tr>
+          <td>Nemesis</td>
+          <!-- added one extra row so only one name -->
+        </tr>
+        <tr>
+          <td>Chris Wilson</td>
+          <td>40</td>
+          <td>CTO</td>
+          <td>$150,000</td>
+          <td>Innovatech</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table style="border-collapse: collapse;">
+        <tr style="border: 1px solid black;">
+          <td>John Doe</td>
+          <td>30</td>
+          <td>Software Engineer</td>
+          <td>$80,000</td>
+          <td>TechCorp</td>
+        </tr>
+      </table>
+<!-- ----------------------------------------- -->
+ <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>Designation</th>
+            <th>salary</th>
+            <th>company</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" colspan="3">Jane Smith</td>
+            <td>28</td>
+            <td>Data Analyst</td>
+            <td>$70,000</td>
+            <td>DataWorks</td>
+            <!-- td starts from left to right  -->
+          </tr>
+          <tr>
+            <td>Chris Wilson</td>
+            <td>40</td>
+            <td>CTO</td>
+            <td>$150,000</td>
+            <td>Innovatech</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ---------------------------------------------------- -->
+       <table>
+        
+       </table>
+      
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout with Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: auto; /* Allow scrolling if content exceeds viewport height */
+        }
+        .navbar {
+            height: 60px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            min-height: 100vh;
+            overflow: auto; /* Ensure main content can scroll if needed */
+            align-items: stretch; /* Make children stretch to fill the container */
+        }
+        .left {
+            width: 30vw;
+            background-color: lightblue;
+            margin: 10px 0 10px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding: 5px;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            margin: 10px;
+        }
+        
+        .top-right {
+            flex: 1;
+            background-color: lightcoral;
+            margin-bottom: 10px;
+            padding: 5px;
+            min-height: 30%;
+        }
+        .bottom-right {
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            align-items: stretch; /* Make children stretch to fill the container */
+        }
+        .bottom-right > .box1, .bottom-right > .box2 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px;
+            overflow: hidden;
+        }
+        .bottom-right > .box1 {
+            background-color: lightgreen;
+        }
+        .bottom-right > .box2 {
+            background-color: rgb(239, 239, 16);
+        }
+        .bottom-right img {
+            width: 100%;
+            height: auto;
+            max-height: 70%;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+        .content {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        Navbar
+    </div>
+    <div class="main-content">
+        <div class="left">
+            <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. 
+            </div>
+        </div>
+        <div class="right">
+            <div class="top-right">
+                <div class="content">
+                    Lorem ipsum dolor lorem200 sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. 
+                </div>
+            </div>
+            <div class="bottom-right">
+                <div class="box1">
+                    <img src="https://th.bing.com/th/id/OIP.GPFEY6kfgxbsja6gmrW6rwAAAA?rs=1&pid=ImgDetMain" alt="">
+                    <div class="content">
+                        Lorem ipsum lorem400 dolor sit amet, consectetur adipiscing elit. Repudiandae odio sint facere modi! Voluptates ea cum odio. Quia magnam neque magni quam, sunt nisi minus alias quis nihil? Quibusdam magnam quisquam delectus voluptatibus doloremque. Earum quaerat quisquam pariatur accusamus eaque suscipit alias nam esse dolores. Labore nobis praesentium at consequuntur!
+                    </div>
+                </div>
+                <div class="box2">
+                    <img src="https://th.bing.com/th/id/OIP.GPFEY6kfgxbsja6gmrW6rwAAAA?rs=1&pid=ImgDetMain" alt="">
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

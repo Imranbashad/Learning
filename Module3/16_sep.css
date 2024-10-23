@@ -1,0 +1,27 @@
+.text {
+    border: 1px solid red;
+    width: 500px;
+    margin: 30px;
+    text-align: center;
+    /* text-decoration: line-through; */
+    text-transform: capitalize;
+    text-shadow: 50px -20px 3px rgb(255, 0, 0, 0.8); 
+    background-color: yellow;
+    line-height: 2;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-stretch: condensed;
+    font-variant: small-caps;
+    /* font variant changes letters to capital without changing size of letter */
+    font-style: italic;
+    /* font-kerning: auto; */
+    
+  }
+  p{
+    text-indent: 50px;
+    /* it genraly used with para to move first line text a little bit right */
+  }

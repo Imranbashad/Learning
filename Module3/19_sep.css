@@ -1,0 +1,43 @@
+.container {
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    /* based on original axis it centers */
+    
+    /* Equal space around each item: The space between any two items 
+    is the same, but the space at the edges
+     (before the first item and after the last item) is half of that. */
+    align-items: center;
+    /* it centeers oposite axis */
+    padding: 20px;
+    gap:10px;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* flex-direction: row-reverse; */
+    /* height: 100vh; */
+ 
+    /* 
+    1. align itmes work on corss axis and justify work on main axis.( direction of flex)
+    
+    */
+  }
+  .child {
+    border: 1px solid black;
+    padding: 20px ;
+    /* width: 5%; */
+    margin: 5px;
+
+    flex-basis: 100px;
+    /* used on child content */
+  }
+
+  .item1{
+    flex-grow: 3;
+    /* used for single item based on flex basis*/
+    flex-shrink: 3;
+    /*  both are same works on flex basis one shrinks faster
+    based on basis and one expands faster based  on basis value */
+  }
+  .item2{
+    flex-grow: 2;
+  }
