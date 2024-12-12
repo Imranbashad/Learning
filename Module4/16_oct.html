@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ====================================================================================================================== -->
+    <input type="email" id="email-id" placeholder="email">
+    <button id="submit-btn">submit</button>
+
+    <script>
+        let emailInput = document.getElementById('email-id');
+        let btn = document.getElementById('submit-btn');
+
+        btn.addEventListener('click', (e) => {          // here e is an eventObject ( chek in browser console has so many info)
+        console.log(e);
+        e.preventDefault();       // Learn more about event prevent default
+            setTimeout(()=>{
+                if(emailInput.value === ''){
+            alert("email is empty");
+        }
+        else{
+            alert(`input is ${emailInput.value}`);
+        }
+            },2000)
+        })
+    </script>
+
+    <!-- =================================================================================================================================== -->
+    <!-- we can target any css selector in query selector -->
+    <!-- <ul id="list">
+      <li>item1</li>
+      <li>item1</li>
+      <li>item1</li>
+      <li>item1</li>
+      <li>item1</li>
+    </ul>
+    <button id="btn">button</button>
+    <script>
+      const btnu = document.getElementById("btn");
+      let val = true;
+      btnu.addEventListener("click", () => {
+        if (val) {
+          const list = document.querySelectorAll("#list li:nth-child(even)");
+          list.forEach((element) => {
+            element.style.backgroundColor = "grey";
+            val = false;
+          });
+        } else {
+          const list = document.querySelectorAll("#list li:nth-child(even)");
+          list.forEach((element) => {
+            element.style.backgroundColor = "inherit";
+            val = true;
+          });
+        }
+      }); -->
+    </script>
+  </body>
+</html>
+
+
+

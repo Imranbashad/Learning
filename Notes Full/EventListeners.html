@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners Example</title>
+    <style>
+        .hover-highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Listeners Example</h1>
+
+    <!-- Button for mouse events -->
+    <button id="mouse-btn">Mouse Events</button>
+
+    <!-- Input for keyboard events -->
+    <input id="keyboard-input" type="text" placeholder="Type something...">
+
+    <!-- Form for form events -->
+    <form id="form-example">
+        <input type="text" placeholder="Form input">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Div for window events -->
+    <div id="resize-div" style="width: 100%; height: 50px; background-color: lightgrey;">
+        Resize the window!
+    </div>
+
+    <!-- Element for focus events -->
+    <input id="focus-input" type="text" placeholder="Focus on me!">
+
+    <!-- Draggable and drop elements for drag and drop events -->
+    <div id="drag-item" draggable="true" style="width: 100px; height: 100px; background-color: lightblue;">Drag me</div>
+    <div id="drop-zone" style="width: 100px; height: 100px; background-color: lightgreen; margin-top: 20px;">Drop here</div>
+
+    <script>
+        // Mouse Events
+        const mouseBtn = document.getElementById('mouse-btn');
+        mouseBtn.addEventListener('click', () => alert('Button clicked!'));
+        mouseBtn.addEventListener('dblclick', () => alert('Button double-clicked!'));
+        mouseBtn.addEventListener('mouseover', () => mouseBtn.classList.add('hover-highlight'));
+        mouseBtn.addEventListener('mouseout', () => mouseBtn.classList.remove('hover-highlight'));
+
+        // Keyboard Events
+        const keyboardInput = document.getElementById('keyboard-input');
+        document.addEventListener('keydown', (event) => console.log('Key down:', event.key));
+        document.addEventListener('keyup', (event) => console.log('Key up:', event.key));
+        keyboardInput.addEventListener('input', () => console.log('Input changed:', keyboardInput.value));
+
+        // Form Events
+        const formExample = document.getElementById('form-example');
+        formExample.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevents the default form submission
+            alert('Form submitted');
+        });
+
+        // Window Events
+        window.addEventListener('load', () => console.log('Page fully loaded'));
+        window.addEventListener('resize', () => console.log('Window resized'));
+        window.addEventListener('scroll', () => console.log('Window scrolled'));
+
+        // Focus Events
+        const focusInput = document.getElementById('focus-input');
+        focusInput.addEventListener('focus', () => console.log('Input focused'));
+        focusInput.addEventListener('blur', () => console.log('Input blurred'));
+
+        // Drag and Drop Events
+        const dragItem = document.getElementById('drag-item');
+        const dropZone = document.getElementById('drop-zone');
+
+        dragItem.addEventListener('dragstart', () => console.log('Drag started'));
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault(); // Necessary to allow dropping
+            console.log('Dragging over drop zone');
+        });
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            console.log('Element dropped');
+        });
+
+        // Touch Events (for mobile devices)
+        dragItem.addEventListener('touchstart', () => console.log('Touch start'));
+        dragItem.addEventListener('touchmove', () => console.log('Touch move'));
+        dragItem.addEventListener('touchend', () => console.log('Touch end'));
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+Explanation:
+Mouse Events: Listen for click, double-click, mouse over, and mouse out on a button.
+
+Keyboard Events: Listen for key down, key up, and input events on a text input.
+
+Form Events: Listen for form submission.
+
+Window Events: Listen for window load, resize, and scroll events.
+
+Focus Events: Listen for focus and blur on an input field.
+
+Drag and Drop Events: Handle drag start, drag over, and drop events on draggable and drop zone elements.
+
+Touch Events: Handle touch start, move, and end events on mobile devices.
+-->

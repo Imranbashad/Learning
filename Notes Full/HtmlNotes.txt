@@ -4,6 +4,10 @@ responsiveness of websites
 screen reader
 seo. 
 
+// // path types for wb dev.
+// dev tools
+
+
 Sometime we send data from frontend to backend to store in dabase. sometime we retrieve data from from backend.
 // Learn more about semantic tags header, footer, section, 
 
@@ -39,8 +43,6 @@ align itmes self read more
 mre about gap
 
  difference betwene flex and grid 
-
-
 
 
 

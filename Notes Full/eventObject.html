@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object Methods and Properties</title>
+    <style>
+        .hover-highlight {
+            background-color: yellow;
+        }
+        #drag-item {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+        }
+        #drop-zone {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Object Methods and Properties Example</h1>
+
+    <!-- Elements for testing events -->
+    <button id="event-button">Click Me</button>
+    <input id="event-input" type="text" placeholder="Type something...">
+    <form id="event-form">
+        <input type="text" placeholder="Form input">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="drag-item" draggable="true">Drag me</div>
+    <div id="drop-zone">Drop here</div>
+
+    <script>
+        // Function to log event object details
+        function logEventDetails(event) {
+            console.log('Event Type:', event.type);
+            console.log('Event Target:', event.target);
+            console.log('Current Target:', event.currentTarget);
+            console.log('Is Trusted:', event.isTrusted);
+            console.log('Time Stamp:', event.timeStamp);
+            console.log('Default Prevented:', event.defaultPrevented);
+            console.log('Event Phase:', event.eventPhase); // 1 = capturing, 2 = at target, 3 = bubbling
+            console.log('Bubbles:', event.bubbles); // Indicates if the event bubbles up through the DOM
+            console.log('Cancelable:', event.cancelable); // Indicates if the event is cancelable
+            console.log('Client X:', event.clientX); // Mouse event - X coordinate
+            console.log('Client Y:', event.clientY); // Mouse event - Y coordinate
+            console.log('Key:', event.key); // Keyboard event - Key pressed
+            console.log('Key Code:', event.keyCode); // Keyboard event - Deprecated key code
+        }
+
+        // Mouse Events
+        const eventButton = document.getElementById('event-button');
+        eventButton.addEventListener('click', (event) => {
+            logEventDetails(event);
+            // Prevent the default action
+            event.preventDefault();
+            console.log('Default action prevented');
+            // Stop propagation
+            event.stopPropagation();
+            console.log('Propagation stopped');
+            // Stop immediate propagation
+            event.stopImmediatePropagation();
+            console.log('Immediate propagation stopped');
+        });
+
+        // Keyboard Events
+        const eventInput = document.getElementById('event-input');
+        eventInput.addEventListener('keydown', (event) => {
+            logEventDetails(event);
+            console.log('Key down:', event.key);
+        });
+
+        // Form Events
+        const eventForm = document.getElementById('event-form');
+        eventForm.addEventListener('submit', (event) => {
+            logEventDetails(event);
+            event.preventDefault(); // Prevents the default form submission
+            console.log('Form submission prevented');
+        });
+
+        // Drag and Drop Events
+        const dragItem = document.getElementById('drag-item');
+        const dropZone = document.getElementById('drop-zone');
+        dragItem.addEventListener('dragstart', (event) => logEventDetails(event));
+        dropZone.addEventListener('dragover', (event) => {
+            event.preventDefault(); // Necessary to allow dropping
+            logEventDetails(event);
+        });
+        dropZone.addEventListener('drop', (event) => {
+            event.preventDefault();
+            logEventDetails(event);
+        });
+
+        // Window Event to demonstrate event phase and bubbling
+        window.addEventListener('click', (event) => {
+            console.log('Window click');
+            logEventDetails(event);
+        }, true); // Use capturing phase for demonstration
+
+        // Another window event to show propagation
+        window.addEventListener('click', (event) => {
+            console.log('Window click - bubble');
+            logEventDetails(event);
+        });
+    </script>
+</body>
+</html>
+
+
+<!-- 
+
+Explanation:
+preventDefault():
+
+Prevents the default action associated with the event (e.g., form submission).
+
+Used in the submit event listener for the form and the click event listener for the button.
+
+stopPropagation():
+
+Prevents the event from bubbling up to parent elements.
+
+Used in the click event listener for the button.
+
+stopImmediatePropagation():
+
+Prevents other listeners of the same event from being called.
+
+Used in the click event listener for the button.
+
+target:
+
+The element that triggered the event.
+
+Logged in the logEventDetails function.
+
+currentTarget:
+
+The element to which the event handler is attached.
+
+Logged in the logEventDetails function.
+
+isTrusted:
+
+Indicates whether the event was generated by a user action or script.
+
+Logged in the logEventDetails function.
+
+timeStamp:
+
+The time (in milliseconds) at which the event was created.
+
+Logged in the logEventDetails function.
+
+defaultPrevented:
+
+Indicates whether preventDefault() was called on the event.
+
+Logged in the logEventDetails function.
+
+eventPhase:
+
+Indicates the phase of the event flow (capturing, at target, or bubbling).
+
+Logged in the logEventDetails function.
+
+bubbles:
+
+Indicates if the event bubbles up through the DOM.
+
+Logged in the logEventDetails function.
+
+cancelable:
+
+Indicates if the event is cancelable.
+
+Logged in the logEventDetails function.
+
+clientX and clientY:
+
+The X and Y coordinates of the mouse pointer relative to the viewport when the event occurred.
+
+Logged in the logEventDetails function.
+
+key:
+
+The value of the key pressed.
+
+Logged in the keydown event listener for the input.
+
+keyCode:
+
+The deprecated key code of the key pressed.
+
+Logged in the logEventDetails function (for completeness).
+
+-->

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Propagation Example</title>
+  <style>
+    #outer {
+      padding: 20px;
+      border: 2px solid blue;
+    }
+    #inner {
+      padding: 20px;
+      border: 2px solid red;
+    }
+    #button {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    Outer Div
+    <div id="inner">
+      Inner Div
+      <button id="button">Click Me!</button>
+    </div>
+  </div>
+  <script src="script.js">
+
+document.getElementById('outer').addEventListener('click', function(event) {
+  alert('Outer Div Clicked - Bubbling Phase');
+}, false); // Bubbling phase
+
+document.getElementById('inner').addEventListener('click', function(event) {
+  alert('Inner Div Clicked - Bubbling Phase');
+}, false); // Bubbling phase
+
+document.getElementById('button').addEventListener('click', function(event) {
+  alert('Button Clicked');
+}, false); // Bubbling phase
+
+// Adding event listener for capturing phase
+document.getElementById('outer').addEventListener('click', function(event) {
+  alert('Outer Div Clicked - Capturing Phase');
+}, true); // Capturing phase
+
+document.getElementById('inner').addEventListener('click', function(event) {
+  alert('Inner Div Clicked - Capturing Phase');
+}, true); // Capturing phase
+
+document.getElementById('button').addEventListener('click', function(event) {
+  alert('Button Clicked - Capturing Phase');
+}, true); // Capturing phase
+
+// Example with stopPropagation
+document.getElementById('button').addEventListener('click', function(event) {
+  alert('Button Clicked');
+  event.stopPropagation(); // Stops the event from bubbling up
+}, false); // Bubbling phase
+
+  </script>
+</body>
+</html>
+
+<!-- =============================================================================================================== -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevent Default Example</title>
+  <style>
+    form {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 300px;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Custom JavaScript code
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      
+      console.log('Form Submitted!');
+      console.log('Name:', name);
+      console.log('Email:', email);
+
+      // Optionally, display the form data on the web page
+      const formDataDiv = document.createElement('div');
+      formDataDiv.innerHTML = `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p>`;
+      document.body.appendChild(formDataDiv);
+    });
+  </script>
+
+</body>
+</html> -->
+
