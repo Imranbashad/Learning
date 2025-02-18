@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0C0E10;
+}
+#landing-page{
+    display: flex;
+}
+#side-bar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    width: 30%; 
+    background-color: #0C0E10;   
+    color: white;
+    height: 100vh;
+}
+#main-content{
+    width: 70%;
+}
+
+p,h3,img{
+    text-align: center;
+}
+h3{
+    margin: 15px 0px;
+}
+hr{
+    margin: 10px 0;
+}
+ol>li{
+    margin-left: 20px;
+}
+#nav-bar{
+    display: flex;
+    background-color: rgb(40, 38, 38);
+    padding: 10px;
+    gap:20px;
+}
+i{
+    position: relative;
+    left: 45px;
+    
+    top:7px;
+    
+}
+input{
+    width: 100%;
+}
+button{
+    width:120px;
+    background-color: #FF2424;
+    color: white;
+    border-style: none;
+}
+#landing-page-image img{
+    width: 100%;
+    height: 40vh;
+    padding: 20px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <section id="landing-page">
+        <div id="side-bar">
+            <img src="update.png" alt="" width="200">
+            <p>Your Restaurant</p>
+            <p>your slogan</p>
+            <hr>
+            <h3>Quick Links</h3>
+            <ol type="1">
+                <li>Home</li>
+                <li>Your orders</li>
+                <li>WAllet</li>
+                <li>profile</li>
+                <li>logout</li>
+            </ol>
+            <hr>
+            <h3>More About Us</h3>
+            <ol type="1">
+                <li>our Blog</li>
+                <li>Upcomming Dishes</li>
+                <li>Our Story</li>
+                <li>Social Media Links</li>
+            </ol>
+        </div>
+        <!-- part 2 -->
+        <div id="main-content">
+            <div id="nav-bar">
+                <i class="fa fa-search"></i>
+                <input type="text" id="search-bar">
+                <button>Login</button>
+                <button>Sign Up</button>
+                <img src="update.png" width="30">
+            </div>
+            <div id="landing-page-image">
+                <img src="landingUp.png" alt="">
+
+            </div>
+            <div>
+
+            </div>
+          
+
+        </div>
+
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
